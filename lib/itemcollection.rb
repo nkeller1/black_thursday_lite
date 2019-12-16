@@ -13,6 +13,10 @@ class Itemcollection
     item_array
   end
 
+  def acc_headers
+    CSV.open("./data/items.csv", &:readline)
+  end
+
   def where(id)
     @items.find_all do |item|
       require "pry"; binding.pry
